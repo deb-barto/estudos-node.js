@@ -10,10 +10,40 @@ const app = express();
 ** DELETE - deletar uma info no servidor
 */
 
-    app.get("/",(request, response)=>{
-    return response.json({message:"hello word! fundamentod nodejs <3"}) 
+    app.get("/courses",(request, response)=>{
+    return response.json(["curso 1", "curso 2", "curso 3"
+    ]);
+});
+    // usando metodo post
+
+    app.post("/courses",(request, response)=>{
+        return response.json(["curso 1", "curso 2", "curso 3", "curso 4"]);
     //return response.send("hello word!") 
 })
+
+    app.put("/courses/:id",(request, response)=>{
+        return response.json(["curso 1.1", "curso 2", "curso 3", "curso 4"
+        ]);
+});
+    // usando metodo put
+
+
+    app.patch("/courses/:id",(request, response)=>{
+        return response.json(["curso 1.0", "curso 2", "curso 3", "curso 4"
+        ]);
+    });
+        // usando metodo patch
+    
+    app.delete("/courses/:id",(request, response)=>{
+            return response.json(["curso 1.0", "curso 2", "curso 3"]);
+    });
+            // usando metodo delete
+        
+        
+
+
+
+
     // usamos normalmente a função de json
    // permite mandar mensagem pra quem solicita a rota
 
