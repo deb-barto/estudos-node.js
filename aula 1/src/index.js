@@ -16,6 +16,7 @@ app.use(express.json());
 2)query params  => paginação, filtros
 
 3) body params => os objetos inserção / alteração (JSON)
+
 */
 
 
