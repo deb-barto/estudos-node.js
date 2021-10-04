@@ -121,4 +121,28 @@ app.get("/statement/date", verifyIfExistsAccountCPF, (request, response)=>{
     return response.json(statement)
 });
  
+app.put("/account", verifyIfExistsAccountCPF, (request, response)=>{
+    const { name } =  request.body;
+
+    const {customer} = request;
+
+    customer.name = name;
+
+    return response.status(201).send();
+})
+// ver a conta do usuario
+app.get("/account", verifyIfExistsAccountCPF,(request, response) =>{
+const {customer} = request;
+    return response.json(customer);
+})
+
+// metodo delete
+
+app.delete("/account", verifyIfExistsAccountCPF, (request, response) =>{
+    const { customer } = request;
+
+    customers.slice(customer,1);
+    return response.status(200).json(customers)
+
+})
 app.listen(3333);
