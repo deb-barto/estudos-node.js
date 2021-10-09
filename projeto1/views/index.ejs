@@ -1,35 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guia Perguntas</title>
-    <link rel="stylesheet" href="/css/style.css">
-</head>
-<body>
-    <h1>Guia de perguntas</h1>
-    
-    <h3>Lista de perguntas</h3>
-
-   <p>nome: <%= nome %></p>
-   <p>linguaguem: <%= lang %></p>
-   <p>empresa: <%= empresa %></p>
-   <p>inscritos <%= inscritos %></p>
-
-
-
-   <% if(msg){%>
-    <h3>Mensagem de erro!</h3>
-   <%}else{%> 
-    <h3>nenhum erro! :D </h3>
-   <% } %>
-
-   <% produtos.forEach(function(produto ) {%>
-        <%= produto.nome %>
-        <%= produto.preco %>
-        <br>
+<%- include ('partials/header.ejs')%>
+    <body class="body">
+        <%- include ('partials/nav.ejs')%>
+    <div class= "container questions">
+        <h2>Faça sua pergunta!</h2>
+        <h4>Tire suas duvidas com nossa comunidade ativa, sinta-se livre para poder contribuir também. 😊</h4>
+        <a  href="/quest"><button class="button">Perguntar</button></a>
         <hr>
-   <% }) %>
-</body>
-</html>
+    
+        <% perguntas.forEach(perguntas =>{%>
+         <div class="card">
+            <div class="card-header">
+                <p><%= perguntas.titulo %></p>
+            </div>
+            <div class="card-body">
+                <p><%= perguntas.descricao %></p>
+            </div>
+         </div>
+         <br>
+         <%})%>
+  
+    </div>
+    </body>
+<%- include ('partials/footer.ejs')%>
