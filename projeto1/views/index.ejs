@@ -2,18 +2,23 @@
     <body class="body">
         <%- include ('partials/nav.ejs')%>
     <div class= "container questions">
-        <h2>Faça sua pergunta!</h2>
-        <h4>Tire suas duvidas com nossa comunidade ativa, sinta-se livre para poder contribuir também. 😊</h4>
-        <a  href="/quest"><button class="button">Perguntar</button></a>
+        <div class="hero1">
+            <div class="textos">  
+                <h2>Faça sua pergunta!</h2>
+                <h4>Tire suas duvidas com nossa comunidade ativa, sinta-se livre para poder contribuir também. 😊</h4>
+                <a  href="/quest"><button class="button">Perguntar</button></a>
+            </div>
+            <img src="/img/hero1.png" class="heroimg">
+        </div>
         <hr>
     
         <% perguntas.forEach(perguntas =>{%>
          <div class="card">
             <div class="card-header">
-                <p><%= perguntas.titulo %></p>
+                <h4><%= perguntas.titulo %></h4>
             </div>
             <div class="card-body">
-                <p><%= perguntas.descricao %></p>
+                <a  href="/question/<%= perguntas.id%>"><button class="button2">Responder</button></a>
             </div>
          </div>
          <br>
