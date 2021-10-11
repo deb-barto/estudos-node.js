@@ -1,0 +1,67 @@
+.body{
+    background-color:rgb(247, 255, 247);
+    height:100vh;
+    width:100vw;
+    align-items: center;
+    justify-content:center;
+}
+
+.logo{
+    width:100px;
+}
+
+.button {
+    background-color:rgb(255, 94, 0);
+    border-radius: 5px;
+    border:1px solid rgb(236, 159, 72);
+    cursor: pointer;
+    width:200px;
+    height:40px;
+    margin-top: 5px;
+    color:rgb(255, 255, 255);
+}
+
+.button:hover{
+    background-color:rgb(255, 156, 7);
+    outline:1px solid rgb(255, 248, 149);
+    transition:ease-in-out .3s;
+}
+
+
+.button2 {
+    background-color:rgb(61, 163, 69);
+    border-radius: 5px;
+    border:1px solid rgb(10, 155, 87);
+    cursor: pointer;
+    width:150px;
+    height:40px;
+    margin-top: 5px;
+    color:rgb(255, 255, 255);
+    font-weight: 600;
+}
+
+.button2:hover{
+    background-color:rgb(56, 212, 69);
+    outline:1px solid rgb(218, 255, 149);
+    border:1px solid rgb(222, 248, 236);
+    transition:ease-in-out .3s;
+}
+
+.texto{
+    color:black
+}
+
+.hero1{
+    display:flex;
+    align-items: center;
+    padding-left: 20px;
+}
+.textos{
+    width:50%
+}
+.heroimg{
+    width:50%;
+}
+.titulo-quest{
+
+}
