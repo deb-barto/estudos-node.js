@@ -1,0 +1,56 @@
+<%- include ('../../partials/header.ejs')%>
+    <body class="body">
+        <%- include ('../../partials/navbar.ejs')%>
+       <div class="container">
+        <h2>Categorias:</h2>
+        <button class=" button" >
+            <a class="buttonCat"href="/admin/categories/new">Criar nova categoria</a>
+        </button>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Título</th>
+                    <th>Slug</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>1</th>
+                    <th>Desenvolvimento web</th>
+                    <th>desenvolvimento-web</th>
+                    <th>
+                        <button class=" btn badge-warning">Editar</button>
+                        <button class=" btn badge-danger">Deletar</button>
+                    </th>
+                </tr>
+                <% categories.forEach(category =>{ %>
+                    <tr>
+                        <th><%= category.id %></th>
+                        <th><%= category.title %></th>
+                        <th><%= category.slug %></th>
+                        <th>
+                        
+                               <a href="/admin/categories/edit/<%= category.id %>"><button class=" btn badge-warning">Editar</button></a> 
+                            <form method="post" class="formulario" action="/categories/delete" onsubmit="confirmDelet(event, this)">
+                                <input type="hidden" name="id" value=" <%= category.id %> ">
+                                <button class=" btn badge-danger">Deletar</button>
+                            </form>
+                        </th>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+       </div>
+    </body>
+<%- include ('../../partials/header.ejs')%>
+<script>
+    function confirmDelet(event, form){
+        event.preventDefault(); // impede que formulario seja submetido
+        var decision = confirm ("Deseja deletar esta categoria?")
+        if (decision){
+            form.submit();
+        }
+    }
+</script>
