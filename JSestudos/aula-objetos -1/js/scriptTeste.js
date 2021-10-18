@@ -1,20 +1,53 @@
-let num1= 9.4578;
-let num2 = Math.floor(num1);  // arredonda pra baixo
-let num3 = Math.ceil(num1); // arredonda pra cima
-let num4 = Math.round(num1); // arredonda para numero mais proximo
-console.log(num2);
-console.log(num3);
-console.log(num4);
+// objeto é com chaves
+
+const pessoa = {
+    nome: 'Amanda',
+    sobrenome: 'Miranda',
+    idade: 25
+};
+
+console.log(pessoa)
+console.log(pessoa.nome) // aqui mostra somente um elemento do objeto
+
+const nome = pessoa.nome
+console.log(nome) /// aqui eu atribuo o nome do objeto a uma constante e mando imprimir
+
+//vamos agora criar uma função factory que retorna nome sobrenome e idade
+
+function criarPessoa (nome,sobrenome, idade){ // paramatro
+    return {
+        //nome: nome, // quando a classe do objeto tiver o mesmo nome do parametro, podemos usar o mesmo nome
+        //sobrename: sobrenome,
+        //idade: idade
+
+        // o codigo acima é equivalente ao abaixo, pois os nome da classe e do paramatro é igual
+         nome,
+         sobrenome,
+         idade
+    }
+}
+const pessoa1 = criarPessoa('Luiz', 'Otavio', 25); // argumento
+console.log(pessoa1)
 
 
-console.log(Math.max(1,10000,1,3,4,5,6,1000))  // pega oa maior numero da sequencia
-console.log(Math.min(1,10000,1,3,4,5,6,1000))  // pega oa menor numero da sequencia
 
+// vamos entender oqué o metedo this dentro de um objeto
 
-const aleatorio =Math.round( Math.random() * (10));   ///random pega numero aleatorio de 0 a 1;
-console.log(aleatorio)
+ const pessoa2 ={
+     nome: 'Luiz',
+     sobrenome: 'Bartosiaki',
+     idade: '45',
 
+     // criar um metodo agora para o escoto pessoa2
 
-let num5= 100;
-console.log(num5 ** 0.5)  // pega raiz quadrada
-console.log(100/0); /// que palhaçada kkkkkkkk
+     fala(){
+         console.log(`a minha idade atual é ${this.idade}`)
+     },
+     incrementaIdade(){
+         this.idade++;
+     }
+ }
+
+pessoa2.fala();
+ pessoa2.incrementaIdade();
+pessoa2.fala();

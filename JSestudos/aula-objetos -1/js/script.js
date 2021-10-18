@@ -1,15 +1,34 @@
-let numero = Number(prompt("digite um numero:"))
+function meuEscopo (){
+        const form = document.querySelector('.form'); // pelo nome é form, pela classe é .form, pelo id é #form
+        const resultado = document.querySelector('.resultado');
+        
+        const pessoas =[]; // quem vai preencher o array é o envio do form
 
-const numeroTitulo = document.getElementById("numero");
-numeroTitulo.innerHTML= numero
+               let contador = 0;
 
-const texto = document.getElementById("texto");
-texto.innerHTML=`
-<div>   <p> sua raiz quadrada é: ${ (numero ** (0.5)) } </p>
-        <p>${numero} é inteiro:${Number.isInteger(numero)}</p>
-        <p>É NaN:${Number.isNaN(numero)}</p>
-        <p>Arredondado para baixo:${Math.floor(numero)}</p>
-        <p>Arredondado para cima:${Math.ceil(numero)}</p>
-        <p>Com duas casas decimais:${numero.toFixed(2)}</p>
-</div>`;
+               function recebeEvento(evento){
+                evento.preventDefault();
 
+                 const nome = form.querySelector('.nome');
+                 const sobrenome = form.querySelector('.sobrenome');
+                 const idade = form.querySelector('.idade');
+                 const altura = form.querySelector('.altura');
+
+                 pessoas.push({
+                  nome : nome.value,
+                  sobrenome : sobrenome.value,
+                  idade : idade.value,
+                  altura : altura.value
+                 })
+
+                 console.log(pessoas)
+                 resultado.innerHTML +=`
+                 <p>
+                 ${nome.value}, ${sobrenome.value}, ${idade.value}, ${altura.value}
+                 </p>`
+               }
+
+               form.addEventListener('submit', recebeEvento)
+            
+}
+meuEscopo();
