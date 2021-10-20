@@ -50,3 +50,15 @@ console.log(alunos.slice(0,-4)) // vai retornar tamanho do array menos 4
 
 console.log(typeof alunos)// retorna objeto  (??) vai entender
 console.log(alunos instanceof Array) // retorna true ou false > se for array true
+
+
+
+// arrays dentro de arrays atribuição via desestruturação
+
+const numeros = [ [1,2,3],[4,5,6],[7,8,9]]
+console.log(numeros [1][2])
+
+
+const numeros2 = [ [1,2,3],[4,5,6],[7,8,9]]
+const [lista1, lista2, lista3] = numeros2;
+console.log(lista1[2]) //imprime o 3

@@ -51,3 +51,38 @@ console.log(pessoa1)
 pessoa2.fala();
  pessoa2.incrementaIdade();
 pessoa2.fala();
+
+
+//atribuição por desestruturação de objetos 
+
+
+const pesso3 = {
+     nome1:'luiz',
+     sobrenome:'Bartosiaki',
+     idade:30,
+     endereco:{
+         rua: 'av imperio',
+         numero: 320
+     }
+    };
+//const { nome1 , sobrenome} = pesso3;
+//console.log(nome1, sobrenome)
+
+// para mudar o nome do variavel
+//const { nome1: teste , sobrenome} = pesso3;
+//console.log(teste, sobrenome)
+
+
+// para pegar objetos dentro de ojetos
+
+    //const {endereco:{rua, numero}} = pesso3;
+    //console.log(rua, numero)
+    // outro forma logo abaixo
+
+    const {endereco} = pesso3;
+    console.log(endereco)
+
+// usando o modo rest
+    const {nome1, ...resto} = pesso3;
+    console.log(resto);
+    console.log(nome1)
